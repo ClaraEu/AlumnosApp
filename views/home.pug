@@ -1,0 +1,43 @@
+extends layout.pug
+
+block titulo
+    title Título del home
+
+block content
+    h1 TÍTULO: #{titulo}
+    p= parrafo
+    - var clases = ['clase1', 'clase2', 'clase3']
+    //div.menu
+    .menu
+        p
+            a(href="http://www.google.es", class="enlace") Google
+        p
+            a.enlace(href="http://www.marca.com") Marca.com 
+        p
+            a#marcaEnlace.enlace(href="http://www.marca.com") Marca.com
+        p
+            a(href="http://www.yahoo.es", class=clases) Terra.es
+
+    div
+        //- let amigos = 32 LA VARIABLE VIENE DEL APP.JS
+        case amigos
+            when 0
+                p No tienes amigos
+            when 1
+                p Tienes un amigo
+            default
+                p Tienes #{amigos} amigos
+    div
+        ul
+            - for(let i = 0; i<4; i++)
+                li Elemento #{i+1}
+    if showFooter
+        footer
+            p Copyright © Clara López 2019
+    else 
+        footer
+            p Footer sin gracia
+
+
+    //Comentario visible en HTML
+    //-Comentario solo visible en PUG

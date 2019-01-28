@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block content
+    .row
+        .col-7
+            table.table
+                tr 
+                    th Nombre
+                    th Matrícula
+                    th Email
+                    th Fecha de nacimiento
+                each al in arrAlumnos
+                    +filaAlumno(al)
+        .col-5
+            p Lado derecho
